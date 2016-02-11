@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row col-md-offset-5 col-md-1">
+	<p>
+	  <strong>Número:</strong>
+	  <%= @aula.numero %>
+	</p>
+</div>
+
+
+<%= link_to 'Editar', edit_aula_path(@aula) %> |
+<%= link_to 'Regresar', aulas_path %>

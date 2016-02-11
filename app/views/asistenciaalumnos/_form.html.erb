@@ -1,0 +1,37 @@
+<div class="col-md-offset-4 col-md-4">
+    <%= form_for(@asistenciaalumno) do |f| %>
+    <% if @asistenciaalumno.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@asistenciaalumno.errors.count, "error") %> prohibited this asistenciaalumno from being saved:</h2>
+
+        <ul>
+        <% @asistenciaalumno.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :fecha %><br>
+      <%= f.datetime_select :fecha , class:"form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :estado %><br>
+      <%= f.text_field :estado, class:"form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :estudiante_id %><br>
+      <%= f.text_field :estudiante_id, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :horario_id %><br>
+      <%= f.text_field :horario_id, class:"form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit value:"Crear Asistencia del Alumno", class:"btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>
+

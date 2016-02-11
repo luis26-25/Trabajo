@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @asistenciaalumno.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @asistenciaalumno.estado %>
+</p>
+
+<p>
+  <strong>Estudiante:</strong>
+  <%= @asistenciaalumno.estudiante %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @asistenciaalumno.horario %>
+</p>
+
+<%= link_to 'Edit', edit_asistenciaalumno_path(@asistenciaalumno) %> |
+<%= link_to 'Back', asistenciaalumnos_path %>

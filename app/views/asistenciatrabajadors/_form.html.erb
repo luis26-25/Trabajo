@@ -1,0 +1,37 @@
+<%= form_for(@asistenciatrabajador) do |f| %>
+  <% if @asistenciatrabajador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asistenciatrabajador.errors.count, "error") %> prohibited this asistenciatrabajador from being saved:</h2>
+
+      <ul>
+      <% @asistenciatrabajador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrada %><br>
+    <%= f.datetime_select :entrada %>
+  </div>
+  <div class="field">
+    <%= f.label :salida %><br>
+    <%= f.datetime_select :salida %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :trabajador_id %><br>
+    <%= f.text_field :trabajador_id %>
+  </div>
+  <div class="field">
+    <%= f.label :horario_id %><br>
+    <%= f.text_field :horario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

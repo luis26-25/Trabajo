@@ -1,0 +1,47 @@
+<h1 align="center">Lista de cursos</h1>
+<%= link_to 'Nuevo Curso', new_curso_path %>
+<div class="row col-md-offset-2 col-md-8">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Capacidad</th>
+        <th>Tipo</th>
+        <th>Semestre</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Docente</th>
+        <th>Aula</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cursos.each do |curso| %>
+        <tr>
+          <td><%= curso.codigo %></td>
+          <td><%= curso.nombre %></td>
+          <td><%= curso.capacidad %></td>
+          <td><%= curso.tipo %></td>
+          <td><%= curso.semestre %></td>
+          <td><%= curso.inicio %></td>
+          <td><%= curso.fin %></td>
+          <td><%= curso.trabajador.nombre %></td>
+          <td><%= curso.aula.numero %></td>
+          <td><%= link_to 'Ver', curso %></td>
+          <td><%= link_to 'Editar', edit_curso_path(curso) %></td>
+          <td><%= link_to 'Eliminar', curso, method: :delete, data: { confirm: 'Seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+<br>
+

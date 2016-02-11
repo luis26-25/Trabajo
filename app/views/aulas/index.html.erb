@@ -1,0 +1,30 @@
+<h1 align="center">Lista de aulas</h1><%= link_to 'Crear Aula', new_aula_path %>
+<div class="row col-md-offset-4 col-md-4">
+    <table class="table" >
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @aulas.each do |aula| %>
+        <tr>
+          <td><%= aula.numero %></td>
+          <td><%= link_to 'Ver', aula %></td>
+          <td><%= link_to 'Editar', edit_aula_path(aula) %></td>
+          <td><%= link_to 'Eliminar', aula, method: :delete, data: { confirm: 'Seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  
+
+</div>
+

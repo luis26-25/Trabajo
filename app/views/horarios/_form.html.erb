@@ -1,0 +1,41 @@
+<div class="col-md-offset-4 col-md-4">
+  <%= form_for(@horario) do |f| %>
+    <% if @horario.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@horario.errors.count, "error") %> prohibited this horario from being saved:</h2>
+
+        <ul>
+        <% @horario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :inicio %><br>
+      <%= f.time_select :inicio, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :fin %><br>
+      <%= f.time_select :fin, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :dia %><br>
+      <%= f.number_field :dia, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :turno_id %><br>
+      <%= f.text_field :turno_id, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :curso_id %><br>
+      <%= f.text_field :curso_id, class:"form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="panel panel-default col-md-offset-1 col-md-3 ">
+		<div class="panel-heading text-center">
+			Información
+		</div>
+		<p>
+		  <strong>Departamento:</strong>
+		  <%= @departamento.nombre %>
+		</p>
+		<% if @departamento.trabajador %>
+			<p>
+			  <strong>Director:</strong>
+			  <%= @departamento.trabajador.grado %>
+			  <%= @departamento.trabajador.nombre %>
+			  <%= @departamento.trabajador.paterno %>
+			  <%= @departamento.trabajador.materno  %>
+			</p>
+
+		<%end%>
+		<p>
+		  <strong>Descripcion:</strong>
+		  <%= @departamento.descripcion %>
+		</p>
+		<%= link_to 'Editar', edit_departamento_path(@departamento) %> |
+		<%= link_to 'Eliminar', departamentos_path %>
+		<br>
+		<br>
+	</div>
+	<div class="col-md-offset-4 col-md-3 panel panel-default">
+		<div class="panel-heading text-center" >
+				Agregar Trabajador
+		</div>
+		<%= render "departamentotrabajadors/form"%>
+	</div>
+
+</div>
+
+<div class="row col-md-offset-1 col-md-10"><h1 align="center">Trabajadores</h1>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th>Dni</th>
+	      <th>Paterno</th>
+	      <th>Materno</th>
+	      <th>Nombres</th>
+	      <th>Telefono</th>
+	      <th>Especialidad</th>
+	      <th>Grado</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @departamento.departamentotrabajadors.each do |departamentotrabajador| %>
+	      <tr>
+	        <td><%= departamentotrabajador.trabajador.dni %></td>
+	        <td><%= departamentotrabajador.trabajador.paterno %></td>
+	        <td><%= departamentotrabajador.trabajador.materno %></td>
+	        <td><%= departamentotrabajador.trabajador.nombre %></td>
+	        <td><%= departamentotrabajador.trabajador.telefono %></td>
+	        <td><%= departamentotrabajador.trabajador.especialidad %></td>
+	        <td><%= departamentotrabajador.trabajador.grado %></td>
+	        <td><%= link_to 'Ver', departamentotrabajador.trabajador %></td>
+	        <td><%= link_to 'Editar', edit_trabajador_path(departamentotrabajador.trabajador) %></td>
+	        
+	      	<td><%= link_to 'Eliminar', departamentotrabajador.trabajador, method: :delete, data: { confirm: 'Seguro?' } %></td>
+	       
+	      </tr>
+	    <% end %>
+	  </tbody>
+</table>

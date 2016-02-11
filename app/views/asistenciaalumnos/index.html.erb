@@ -1,0 +1,36 @@
+<h1 align="center">Listado Asistencia de Alumnos</h1>
+
+<div class="row col-md-offset-2 col-md-8">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Estudiante</th>
+        <th>Horario</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @asistenciaalumnos.each do |asistenciaalumno| %>
+        <tr>
+          <td><%= asistenciaalumno.fecha %></td>
+          <td><%= asistenciaalumno.estado %></td>
+          <td><%= asistenciaalumno.estudiante %></td>
+          <td><%= asistenciaalumno.horario %></td>
+          <td><%= link_to 'Ver', asistenciaalumno %></td>
+          <td><%= link_to 'Editar', edit_asistenciaalumno_path(asistenciaalumno) %></td>
+          <td><%= link_to 'Eliminar', asistenciaalumno, method: :delete, data: { confirm: 'Seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<br>
+
+<%= link_to 'Agregar Asistencia de Alumno', new_asistenciaalumno_path %>

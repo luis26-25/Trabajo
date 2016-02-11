@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="col-md-offset-4 col-md-3">
+	<p>
+	  <strong>Fecha:</strong>
+	  <%= @inscripcion.fecha %>
+	</p>
+
+	<p>
+	  <strong>Estudiante:</strong>
+	  <%= @inscripcion.estudiante %>
+	</p>
+
+	<p>
+	  <strong>Curso:</strong>
+	  <%= @inscripcion.curso %>
+	</p>
+</div>
+
+<%= link_to 'Editar', edit_inscripcion_path(@inscripcion) %> |
+<%= link_to 'Regresar', inscripcions_path %>

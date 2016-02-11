@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2016-02-03 23:35:01
+  estado: MyString
+  estudiante_id: 
+  horario_id: 
+
+two:
+  fecha: 2016-02-03 23:35:01
+  estado: MyString
+  estudiante_id: 
+  horario_id: 

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  nombre: MyString
+  capacidad: 1
+  cantidad_inscritos: 1
+  descripcion: MyText
+  tipo: MyString
+  semestre: MyString
+  inicio: 2016-02-03
+  fin: 2016-02-03
+  trabajador_id: 
+  aula_id: 
+
+two:
+  codigo: MyString
+  nombre: MyString
+  capacidad: 1
+  cantidad_inscritos: 1
+  descripcion: MyText
+  tipo: MyString
+  semestre: MyString
+  inicio: 2016-02-03
+  fin: 2016-02-03
+  trabajador_id: 
+  aula_id: 

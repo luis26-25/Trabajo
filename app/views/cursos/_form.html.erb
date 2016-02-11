@@ -1,0 +1,69 @@
+
+<div class="col-md-offset-4 col-md-4">
+  <%= form_for(@curso) do |f| %>
+    <% if @curso.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+        <ul>
+        <% @curso.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :codigo, "Código" %><br>
+      <%= f.text_field :codigo , class:"form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :capacidad, "Capacidad de Estudiantes" %><br>
+      <%= f.number_field :capacidad, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :descripcion, "Descripción" %><br>
+      <%= f.text_area :descripcion, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :tipo %><br>
+      <%= f.text_field :tipo, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :semestre %><br>
+      <%= f.text_field :semestre, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :inicio %><br>
+      <%= f.date_select :inicio, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :fin %><br>
+      <%= f.date_select :fin, class:"form-control" %>
+    </div>
+    <%= form_for(@trabajador) do |t| %>
+      <div class="form-group">
+        <%= t.label :dni, "DNI del Docente" %><br>
+        <%= t.text_field :dni, class:"form-control" %>
+      </div>
+    
+      <%= form_for(@aula) do |a| %>
+        <div class="form-group">
+          <%= a.label :numero, "Número de Aula" %><br>
+          <%= a.number_field :numero, class:"form-control" %>
+        </div>
+        <div class="actions">
+          <%= f.submit class:"btn btn-primary"%>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+</div>
+

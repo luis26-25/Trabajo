@@ -1,0 +1,32 @@
+<div class="col-md-offset-4 col-md-4">
+  <%= form_for(@inscripcion) do |f| %>
+    <% if @inscripcion.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@inscripcion.errors.count, "error") %> prohibited this inscripcion from being saved:</h2>
+
+        <ul>
+        <% @inscripcion.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :fecha %><br>
+      <%= f.datetime_select :fecha, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :estudiante_id %><br>
+      <%= f.text_field :estudiante_id, class:"form-control"  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :curso_id %><br>
+      <%= f.text_field :curso_id, class:"form-control"  %>
+    </div>
+    <div class="actions">
+      <%= f.submit class:"btn btn-primary"  %>
+    </div>
+  <% end %>
+</div>
+

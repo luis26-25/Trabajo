@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-offset-4 col-md-4">
+  <p>
+    <strong>Codigo:</strong>
+    <%= @curso.codigo %>
+  </p>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @curso.nombre %>
+  </p>
+
+  <p>
+    <strong>Capacidad:</strong>
+    <%= @curso.capacidad %>
+  </p>
+
+  <p>
+    <strong>Cantidad inscritos:</strong>
+    <%= @curso.cantidad_inscritos %>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @curso.descripcion %>
+  </p>
+
+  <p>
+    <strong>Tipo:</strong>
+    <%= @curso.tipo %>
+  </p>
+
+  <p>
+    <strong>Semestre:</strong>
+    <%= @curso.semestre %>
+  </p>
+
+  <p>
+    <strong>Inicio:</strong>
+    <%= @curso.inicio %>
+  </p>
+
+  <p>
+    <strong>Fin:</strong>
+    <%= @curso.fin %>
+  </p>
+
+  <p>
+    <strong>Trabajador:</strong>
+    <%= @curso.trabajador.dni %> - 
+    <%= @curso.trabajador.nombre %>
+    <%= @curso.trabajador.paterno %>
+    <%= @curso.trabajador.materno %>
+  </p>
+
+  <p>
+    <strong>Aula:</strong>
+    <%= @curso.aula.numero %>
+  </p>
+
+</div>
+
+<%= link_to 'Editar', edit_curso_path(@curso) %> |
+<%= link_to 'Regresar', cursos_path %>

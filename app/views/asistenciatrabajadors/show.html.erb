@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entrada:</strong>
+  <%= @asistenciatrabajador.entrada %>
+</p>
+
+<p>
+  <strong>Salida:</strong>
+  <%= @asistenciatrabajador.salida %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @asistenciatrabajador.estado %>
+</p>
+
+<p>
+  <strong>Trabajador:</strong>
+  <%= @asistenciatrabajador.trabajador %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @asistenciatrabajador.horario %>
+</p>
+
+<%= link_to 'Edit', edit_asistenciatrabajador_path(@asistenciatrabajador) %> |
+<%= link_to 'Back', asistenciatrabajadors_path %>

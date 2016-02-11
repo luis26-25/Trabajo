@@ -1,0 +1,46 @@
+<h1 align="center">Departamentos</h1> <%= link_to 'Nuevo Departamento', new_departamento_path %>
+
+<div class="row col-md-offset-2 col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Director</th>
+          <th></th>
+          <th></th>
+          <th></th> 
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @departamentos.each do |departamento| %>
+          <tr>
+            <td><%= departamento.nombre %></td>
+            <td><%= departamento.descripcion %></td>
+            <% if departamento.trabajador %>
+              <td>
+                <%= departamento.trabajador.grado %>
+                <%= departamento.trabajador.paterno %>
+                <%= departamento.trabajador.materno %>
+                <%= departamento.trabajador.nombre %>
+                
+              </td>
+            <%else%>
+            <th></th>
+            <% end %>
+            <td><%= link_to 'Ver', departamento %></td>
+            <td><%= link_to 'Editar', edit_departamento_path(departamento) %></td>
+            <td><%= link_to 'Eliminar', departamento, method: :delete, data: { confirm: 'Seguro?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+</div>  
+
+
+
+
+

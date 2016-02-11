@@ -1,0 +1,57 @@
+<div class="col-md-offset-4 col-md-4">
+<%= form_for( @trabajador) do |f| %>
+  <% if @trabajador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trabajador.errors.count, "error") %> prohibited this trabajador from being saved:</h2>
+
+      <ul>
+      <% @trabajador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :dni, "DNI" %><br>
+    <%= f.text_field :dni, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :codigo_modular %><br>
+    <%= f.text_area :codigo_modular, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paterno %><br>
+    <%= f.text_field :paterno, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :materno %><br>
+    <%= f.text_field :materno, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :especialidad %><br>
+    <%= f.text_field :especialidad, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :grado %><br>
+    <%= f.text_field :grado, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, class:"form-control"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit  class:"btn btn-primary"  %>
+  </div>
+<% end %>
+</div>
+
+

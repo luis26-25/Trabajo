@@ -1,0 +1,27 @@
+
+  <%= form_for([@departamento, @departamentotrabajador]) do |f| %>
+    <% if @departamentotrabajador.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@departamentotrabajador.errors.count, "error") %> prohibited this departamentotrabajador from being saved:</h2>
+
+        <ul>
+        <% @departamentotrabajador.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_for( @trabajador ) do |t| %>
+      <div class="form-group">
+        <%= t.label :dni, "DNI Trabajador:" %><br>
+        <%= t.text_field :dni, class:"form-control" %>
+      </div>
+      <div class="actions">
+        <%= f.submit value:"Guardar", class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end %>
+  <br>
+
+

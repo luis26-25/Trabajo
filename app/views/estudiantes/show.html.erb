@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-offset-4 col-md-4">
+  <p>
+    <strong>Dni:</strong>
+    <%= @estudiante.dni %>
+  </p>
+
+  <p>
+    <strong>Codigo modular:</strong>
+    <%= @estudiante.codigo_modular %>
+  </p>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @estudiante.nombre %>
+  </p>
+
+  <p>
+    <strong>Paterno:</strong>
+    <%= @estudiante.paterno %>
+  </p>
+
+  <p>
+    <strong>Materno:</strong>
+    <%= @estudiante.materno %>
+  </p>
+
+  <p>
+    <strong>Telefono:</strong>
+    <%= @estudiante.telefono %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @estudiante.direccion %>
+  </p>
+
+  <p>
+    <strong>Colegio procedencia:</strong>
+    <%= @estudiante.colegio_procedencia %>
+  </p>
+
+  <p>
+    <strong>Orden merito:</strong>
+    <%= @estudiante.orden_merito %>
+  </p>
+
+  <p>
+    <strong>Lugar nacimiento:</strong>
+    <%= @estudiante.lugar_nacimiento %>
+  </p>
+
+  <p>
+    <strong>Sexo:</strong>
+    <%= @estudiante.sexo %>
+  </p>
+
+  <p>
+    <strong>Promocion:</strong>
+    <%= @estudiante.promocion %>
+  </p>
+
+  <p>
+    <strong>Estado:</strong>
+    <%= @estudiante.estado %>
+  </p>
+
+  <p>
+    <strong>Departamento:</strong>
+    <%= @estudiante.departamento %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @estudiante.user %>
+  </p>
+</div>
+
+
+<%= link_to 'Editar', edit_estudiante_path(@estudiante) %> |
+<%= link_to 'Regresar', estudiantes_path %>

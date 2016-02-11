@@ -1,0 +1,32 @@
+<div class="col-md-offset-4 col-md-4">
+  <%= form_for(@turno) do |f| %>
+    <% if @turno.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@turno.errors.count, "error") %> prohibited this turno from being saved:</h2>
+
+        <ul>
+        <% @turno.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :descripcion, "Descripción" %><br>
+      <%= f.text_field :descripcion , class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :hora_inicio %><br>
+      <%= f.time_select :hora_inicio, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :hora_fin %><br>
+      <%= f.time_select :hora_fin, class:"form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit  class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+

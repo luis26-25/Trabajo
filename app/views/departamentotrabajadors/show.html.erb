@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-offset-4 col-md-4">
+	<p>
+	  <strong>Departamento:</strong>
+	  <%= @departamentotrabajador.departamento %>
+	</p>
+
+	<p>
+	  <strong>Trabajador:</strong>
+	  <%= @departamentotrabajador.trabajador %>
+	</p>
+</div>
+
+
+<%= link_to 'Edit', edit_departamentotrabajador_path(@departamentotrabajador) %> |
+<%= link_to 'Regresar', departamentotrabajadors_path %>

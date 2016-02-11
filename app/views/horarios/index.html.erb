@@ -1,0 +1,38 @@
+<h1 align="center"> Horarios </h1> <%= link_to 'Nuevo Horario', new_horario_path %>
+<div class="row col-md-offset-1 col-md-10">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Dia</th>
+        <th>Turno</th>
+        <th>Curso</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @horarios.each do |horario| %>
+        <tr>
+          <td><%= horario.inicio %></td>
+          <td><%= horario.fin %></td>
+          <td><%= horario.dia %></td>
+          <td><%= horario.turno %></td>
+          <td><%= horario.curso %></td>
+          <td><%= link_to 'Ver', horario %></td>
+          <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
+          <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: 'Seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
+
+
+
+
+
